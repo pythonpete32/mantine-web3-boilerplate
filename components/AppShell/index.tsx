@@ -1,16 +1,17 @@
 'use client';
 
 import { FC, PropsWithChildren } from 'react';
-import { AppShell as APP_SHELL, Skeleton } from '@mantine/core';
+import { AppShell as APP_SHELL } from '@mantine/core';
 import { useAppShellContext } from './app-shell-context';
 import { Header } from '../Header';
+import { NavbarSimple } from '../NavbarSimple/NavbarSimple';
 
 export const AppShell: FC<PropsWithChildren> = ({ children }) => {
   const { opened } = useAppShellContext();
   return (
     <APP_SHELL
       header={{ height: 60 }}
-      footer={{ height: 60 }}
+      footer={{ height: 0 }}
       navbar={{ width: 300, breakpoint: 'sm', collapsed: { mobile: !opened } }}
       padding="md"
     >
@@ -18,15 +19,9 @@ export const AppShell: FC<PropsWithChildren> = ({ children }) => {
         <Header />
       </APP_SHELL.Header>
       <APP_SHELL.Navbar p="md">
-        Navbar
-        {Array(15)
-          .fill(0)
-          .map((_, index) => (
-            <Skeleton key={index} h={28} mt="sm" animate={false} />
-          ))}
+        <NavbarSimple />
       </APP_SHELL.Navbar>
       <APP_SHELL.Main>{children}</APP_SHELL.Main>
-      <APP_SHELL.Footer p="md">Footer</APP_SHELL.Footer>
     </APP_SHELL>
   );
 };

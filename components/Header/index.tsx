@@ -1,11 +1,11 @@
 'use client';
 
-import { Group, Button, Box, Burger } from '@mantine/core';
+import { Group, Box, Burger } from '@mantine/core';
 import { MantineLogo } from '@mantinex/mantine-logo';
 
 import classes from './header.module.css';
 import { useAppShellContext } from '../AppShell/app-shell-context';
-import { HeaderControls } from './header-controls';
+import { HeaderControls } from '../ControlButtons';
 
 const meta = {
   gitHubLinks: {
@@ -33,7 +33,6 @@ export const Header = () => {
               withDirectionToggle={false}
               discordLink={meta.discordLink}
             />
-            <Button>Sign up</Button>
           </Group>
         </Group>
       </header>
