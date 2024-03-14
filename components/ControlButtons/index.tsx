@@ -15,7 +15,6 @@ import classes from './controls.module.css';
 interface HeaderControlsProps extends BoxProps {
   onSearch?: () => void;
   githubLink?: string;
-  withDirectionToggle?: boolean;
   withSearch?: boolean;
   withGithub?: boolean;
   withDiscord?: boolean;
@@ -71,10 +70,8 @@ export function HeaderControls({
   return (
     <Tooltip.Group openDelay={600} closeDelay={100}>
       <Group gap="xs" {...others}>
-        {/* {withSearch && <SearchControl onClick={onSearch} />} */}
         {withDiscord && <DiscordControl link={discordLink} />}
         {withGithub && <GithubControl link={githubLink!} />}
-        {/* {withDirectionToggle && <DirectionControl />} */}
         {withColorScheme && <ColorSchemeControl />}
       </Group>
     </Tooltip.Group>

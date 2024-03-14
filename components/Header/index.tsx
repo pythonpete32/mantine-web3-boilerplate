@@ -30,7 +30,6 @@ export const Header = () => {
             <HeaderControls
               visibleFrom="sm"
               githubLink={meta.gitHubLinks.daobox}
-              withDirectionToggle={false}
               discordLink={meta.discordLink}
             />
           </Group>

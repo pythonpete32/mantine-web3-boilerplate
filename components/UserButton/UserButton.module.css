@@ -22,3 +22,10 @@
     font-weight: 900;
   }
 }
+
+.mantineButton {
+  width: 100%;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
